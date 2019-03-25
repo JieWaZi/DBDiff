@@ -27,3 +27,6 @@ simple-db-migrate将DBDiff生成的migrate文件执行，最终实现自动化�
 1. 将dbdiff和simple-db-migrate结合起来,对于开发者，只需要统一做一个镜像（dockerfile在dockerfile文件夹中），修改.dbdiff文件，将dev或prod的数据信息写入server2中。每个开发者修改修改下面命令行中 -e 的参数，即自己本机的数据库信息。
 `docker run -it --rm -e DATABASE_HOST=192.168.1.6 -e DATABASE_USER=root -e DATABASE_PASSWORD=1111 -e DATABASE_PORT=33060  wjj5699121/dbdiff-migrate:1.0`
 2. 使用该镜像就不用自己再去运行生成的sql语句，实现自动化。
+
+### 扩展
+修改sh文件，支持使用docker run 运行db-migrate对数据库进行版本控制
