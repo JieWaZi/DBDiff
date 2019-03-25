@@ -1,0 +1,28 @@
+# local databases
+server1:
+  user: root
+  password: 1111
+  port: 33060
+  host: 192.168.1.6
+# remote database
+server2:
+  user: root
+  password: 1111
+  port: 33061
+  host: 192.168.1.6
+template: templates/simple-db-migrate.tmpl
+type: schema  # schema or data or all
+include: all  # up or down or al
+nocomments: false
+tablesToIgnore:
+  - __db_version__
+#- table2
+#- table3
+#fieldsToIgnore:
+#    table1:
+#        - field1
+#        - field2
+#        - field3
+#    table4:
+#        - field1
+#       - field4
